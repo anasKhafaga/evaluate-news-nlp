@@ -18,16 +18,9 @@ function handleSubmit(event, check) {
         'Content-Type': 'application/json',
       },
     })
-      .then((res) => res.json())
-      .then(function (res) {
-        const uList = document.createElement('ul');
-        const sentence_list = res.sentence_list[0];
-        for (const key in sentence_list) {
-          const lItem = document.createElement('li');
-          lItem.textContent = `${key}: ${sentence_list[key]}`;
-          uList.appendChild(lItem);
-        }
-        document.getElementById('results').appendChild(uList);
+    .then((res) => res.json())
+    .then(function (res) {
+      document.getElementById('results').textContent = JSON.stringify(res);
       });
   } else {
     return 'It works'
