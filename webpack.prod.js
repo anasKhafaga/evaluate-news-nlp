@@ -16,12 +16,12 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: '/\.js$/',
                 exclude: /node_modules/,
                 loader: "babel-loader"
             },
             {
-                test: /\.sass$/,
+                test: /\.scss$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
             }
         ]
